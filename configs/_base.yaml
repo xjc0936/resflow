@@ -1,0 +1,48 @@
+# Values explicitly stated by Qin et al., CVPR 2025, unless annotated below.
+model:
+  image_channels: 3
+  image_size: 256
+  base_channels: 128              # DDPM official 256x256 U-Net (paper only says "DDPM U-Net")
+  channel_multipliers: [1, 1, 2, 2, 4, 4]  # DDPM official LSUN-256 configuration
+  num_res_blocks: 2               # DDPM official LSUN-256 configuration
+  attention_resolutions: [16]     # DDPM official LSUN-256 configuration
+  dropout: 0.0                    # DDPM official LSUN-256 configuration
+  adaptive_norm_type: group       # paper says AdaLN; exact normalization is not disclosed
+  timestep_scale: 1.0             # raw continuous t; scaling is not disclosed
+  predict_auxiliary_velocity: true  # required: output [v_x,v_y], 6 channels for RGB
+
+flow:
+  beta: 10.0
+  gamma: 1.75
+
+train:
+  iterations: 400000
+  global_batch_size: 8            # interpretation of paper's ambiguous "batch size of 8"
+  learning_rate: 0.0001
+  minimum_learning_rate: 0.000001
+  betas: [0.9, 0.999]
+  weight_decay: 0.01              # not reported; PyTorch AdamW default
+  precision: fp32                 # not reported; conservative reproducibility default
+  workers: 8
+  seed: 0                         # not reported
+  log_every: 100
+  save_every: 10000
+
+inference:
+  steps: 4
+  solver: euler
+  time_schedule: uniform
+
+data:
+  train:
+    crop_size: 256
+    recursive: true
+    horizontal_flip: false        # only random crop is reported
+    strip_hq_suffixes: []
+    strip_lq_suffixes: []
+  test:
+    crop_size: null               # paper: test at full resolution
+    recursive: true
+    horizontal_flip: false
+    strip_hq_suffixes: []
+    strip_lq_suffixes: []

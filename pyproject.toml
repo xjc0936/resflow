@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "resflow-reproduction"
+version = "0.1.0"
+description = "Paper-faithful unofficial reproduction of Reversing Flow for Image Restoration"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.2",
+  "Pillow>=10.0",
+  "PyYAML>=6.0",
+  "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+metrics = [
+  "lpips>=0.1.4",
+  "torchmetrics>=1.3",
+  "torch-fidelity>=0.3",
+  "scipy>=1.10",
+]
+test = ["pytest>=7.0"]
+
+[project.scripts]
+resflow-train = "resflow.train:main"
+resflow-infer = "resflow.infer:main"
+resflow-evaluate = "resflow.evaluate:main"
+
+[tool.setuptools.packages.find]
+include = ["resflow*"]

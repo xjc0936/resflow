@@ -1,0 +1,11 @@
+base: _base.yaml
+experiment: dense_haze
+data:
+  train:
+    expected_count: 49
+    hq_dir: data/Dense-Haze/train/HQ
+    lq_dir: data/Dense-Haze/train/LQ
+  test:
+    expected_count: 6
+    hq_dir: data/Dense-Haze/test/HQ
+    lq_dir: data/Dense-Haze/test/LQ

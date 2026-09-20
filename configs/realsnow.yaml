@@ -1,0 +1,11 @@
+base: _base.yaml
+experiment: realsnow
+data:
+  train:
+    expected_count: 61500
+    hq_dir: data/RealSnow/train/HQ
+    lq_dir: data/RealSnow/train/LQ
+  test:
+    expected_count: 240
+    hq_dir: data/RealSnow/test/HQ
+    lq_dir: data/RealSnow/test/LQ

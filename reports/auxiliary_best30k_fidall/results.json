@@ -1,0 +1,8 @@
+{
+  "checkpoint": "/data/xjc/Resflow/runs/ink_bleed_64/best_step_0030000_psnr_31.0606.pt",
+  "checkpoint_step": 30000,
+  "seed": 20250920,
+  "steps": 4,
+  "FID_all": 1.3215910196304321,
+  "FID_all_images": 8322
+}

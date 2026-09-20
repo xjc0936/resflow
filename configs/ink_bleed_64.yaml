@@ -1,0 +1,32 @@
+base: _base.yaml
+experiment: ink_bleed_64
+
+model:
+  image_size: 64
+
+train:
+  precision: fp16
+  global_batch_size: 64
+
+validation:
+  enabled: true
+  metric: PSNR
+  top_k: 2
+  batch_size: 16
+  workers: 4
+  steps: 4
+  seed: 0
+
+data:
+  train:
+    manifest: /data/xjc/Resflow/manifests/ink_bleed_train.csv
+    expected_count: 8000
+    crop_size: null
+    reflect_pad_to_square: true
+    resize: 64
+  test:
+    manifest: /data/xjc/Resflow/manifests/ink_bleed_test.csv
+    expected_count: 322
+    crop_size: null
+    reflect_pad_to_square: true
+    resize: 64

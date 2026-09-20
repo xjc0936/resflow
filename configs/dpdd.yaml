@@ -1,0 +1,11 @@
+base: _base.yaml
+experiment: dpdd
+data:
+  train:
+    expected_count: 350
+    hq_dir: data/DPDD/train/HQ
+    lq_dir: data/DPDD/train/LQ
+  test:
+    expected_count: 76
+    hq_dir: data/DPDD/test/HQ
+    lq_dir: data/DPDD/test/LQ

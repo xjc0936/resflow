@@ -1,0 +1,11 @@
+base: _base.yaml
+experiment: outdoor_rain
+data:
+  train:
+    expected_count: 8100
+    hq_dir: data/Outdoor-Rain/train/HQ
+    lq_dir: data/Outdoor-Rain/train/LQ
+  test:
+    expected_count: 900
+    hq_dir: data/Outdoor-Rain/test/HQ
+    lq_dir: data/Outdoor-Rain/test/LQ

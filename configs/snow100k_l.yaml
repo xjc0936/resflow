@@ -1,0 +1,11 @@
+base: _base.yaml
+experiment: snow100k_l
+data:
+  train:
+    expected_count: 50000
+    hq_dir: data/Snow100K-L/train/HQ
+    lq_dir: data/Snow100K-L/train/LQ
+  test:
+    expected_count: 50000
+    hq_dir: data/Snow100K-L/test/HQ
+    lq_dir: data/Snow100K-L/test/LQ

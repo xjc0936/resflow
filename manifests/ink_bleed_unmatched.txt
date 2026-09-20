@@ -1,0 +1,1 @@
+test,hq_only,/data/xjc/训练集+测试集（首映版）/test/origin/00499_原00499_074.png

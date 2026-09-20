@@ -1,0 +1,11 @@
+base: _base.yaml
+experiment: sidd
+data:
+  train:
+    expected_count: 288
+    hq_dir: data/SIDD/train/HQ
+    lq_dir: data/SIDD/train/LQ
+  test:
+    expected_count: 32
+    hq_dir: data/SIDD/test/HQ
+    lq_dir: data/SIDD/test/LQ

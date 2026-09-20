@@ -1,0 +1,13 @@
+base: _base.yaml
+experiment: jpeg_q10
+data:
+  train:
+    expected_count: 3550
+    hq_dir: data/JPEG/train/HQ       # union of DIV2K (900) and Flickr2K (2650)
+    lq_dir: null
+    jpeg_quality: 10
+  test:
+    expected_count: 29
+    hq_dir: data/LIVE1/HQ
+    lq_dir: null
+    jpeg_quality: 10
